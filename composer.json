@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "lamalamanl/laravel-productive",
+    "description": "Laravel-Productive incorporates the Productive API into your Laravel project.",
     "keywords": [
-        ":vendor_name",
+        "lamalamaNL",
         "laravel",
-        ":package_slug"
+        "laravel-productive"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/lamalamanl/laravel-productive",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Mark de Vries",
+            "email": "mark@lamalama.nl",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "lamalama\\LaravelProductive\\": "src",
+            "lamalama\\LaravelProductive\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "lamalama\\LaravelProductive\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "lamalama\\LaravelProductive\\LaravelProductiveServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelProductive": "lamalama\\LaravelProductive\\Facades\\LaravelProductive"
             }
         }
     },
