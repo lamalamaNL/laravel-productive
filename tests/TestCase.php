@@ -3,8 +3,8 @@
 namespace lamalama\LaravelProductive\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use lamalama\LaravelProductive\LaravelProductiveServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

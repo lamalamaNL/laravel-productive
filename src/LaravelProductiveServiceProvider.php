@@ -2,9 +2,9 @@
 
 namespace lamalama\LaravelProductive;
 
+use lamalama\LaravelProductive\Commands\LaravelProductiveCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use lamalama\LaravelProductive\Commands\LaravelProductiveCommand;
 
 class LaravelProductiveServiceProvider extends PackageServiceProvider
 {
