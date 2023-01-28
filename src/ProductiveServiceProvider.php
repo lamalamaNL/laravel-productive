@@ -15,7 +15,7 @@ class ProductiveServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-productive')
+            ->name('productive')
             ->hasConfigFile();
     }
 }

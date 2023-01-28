@@ -15,37 +15,26 @@ You can install the package via composer:
 composer require lamalama/laravel-productive
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-productive-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-productive-config"
+php artisan vendor:publish --tag="productive-config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    'api_url' => env('PRODUCTIVE_API_URL', 'https://api.productive.io/api/v2'),
+    'auth_token' => env('PRODUCTIVE_AUTH_TOKEN'),
+    'organization_id' => env('PRODUCTIVE_ORGANIZATION_ID'),
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-productive-views"
 ```
 
 ## Usage
 
 ```php
-$laravelProductive = new LamaLama\Productive();
-echo $laravelProductive->echoPhrase('Hello, lamalama!');
+$task = Productive::tasks()->get($taskId);
 ```
 
 ## Testing
