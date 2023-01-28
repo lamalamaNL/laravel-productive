@@ -2,7 +2,6 @@
 
 namespace LamaLama\Productive\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use LamaLama\Productive\ProductiveServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
