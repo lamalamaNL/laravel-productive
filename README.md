@@ -44,7 +44,7 @@ php artisan vendor:publish --tag="laravel-productive-views"
 ## Usage
 
 ```php
-$laravelProductive = new lamalama\LaravelProductive();
+$laravelProductive = new LamaLama\Productive();
 echo $laravelProductive->echoPhrase('Hello, lamalama!');
 ```
 
@@ -68,8 +68,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Mark de Vries](https://github.com/lamalamaMark)
-- [All Contributors](../../contributors)
+-   [Mark de Vries](https://github.com/lamalamaMark)
+-   [All Contributors](../../contributors)
 
 ## License
 

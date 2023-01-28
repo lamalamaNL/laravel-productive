@@ -1,5 +1,5 @@
 {
-    "name": "lamalamanl/laravel-productive",
+    "name": "lamalama/laravel-productive",
     "description": "Laravel-Productive incorporates the Productive API into your Laravel project.",
     "keywords": [
         "lamalamaNL",
@@ -35,13 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "lamalama\\LaravelProductive\\": "src",
-            "lamalama\\LaravelProductive\\Database\\Factories\\": "database/factories"
+            "LamaLama\\Productive\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "lamalama\\LaravelProductive\\Tests\\": "tests"
+            "LamaLama\\Productive\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "lamalama\\LaravelProductive\\LaravelProductiveServiceProvider"
+                "LamaLama\\Productive\\ProductiveServiceProvider"
             ],
             "aliases": {
-                "LaravelProductive": "lamalama\\LaravelProductive\\Facades\\LaravelProductive"
+                "Productive": "LamaLama\\Productive\\Facades\\Productive"
             }
         }
     },

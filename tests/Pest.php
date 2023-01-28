@@ -1,5 +1,5 @@
 <?php
 
-use lamalama\LaravelProductive\Tests\TestCase;
+use LamaLama\Productive\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

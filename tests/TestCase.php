@@ -1,9 +1,9 @@
 <?php
 
-namespace lamalama\LaravelProductive\Tests;
+namespace LamaLama\Productive\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use lamalama\LaravelProductive\LaravelProductiveServiceProvider;
+use LamaLama\Productive\ProductiveServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -11,16 +11,12 @@ class TestCase extends Orchestra
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'lamalama\\LaravelProductive\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            LaravelProductiveServiceProvider::class,
+            ProductiveServiceProvider::class,
         ];
     }
 

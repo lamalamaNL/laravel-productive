@@ -5,12 +5,12 @@ namespace LamaLama\Productive\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \lamalama\LaravelProductive\LaravelProductive
+ * @see \LamaLama\LaravelProductive\LaravelProductive
  */
 class Productive extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \lamalama\Productive\Productive::class;
+        return \LamaLama\Productive\Productive::class;
     }
 }
