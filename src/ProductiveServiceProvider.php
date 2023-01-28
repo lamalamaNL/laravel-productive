@@ -2,7 +2,6 @@
 
 namespace LamaLama\Productive;
 
-use lamalama\LaravelProductive\Commands\LaravelProductiveCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
