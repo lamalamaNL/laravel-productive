@@ -1,6 +1,6 @@
 <?php
 
-namespace lamalama\LaravelProductive;
+namespace LamaLama\Productive;
 
 use lamalama\LaravelProductive\Commands\LaravelProductiveCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -17,9 +17,6 @@ class LaravelProductiveServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-productive')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-productive_table')
-            ->hasCommand(LaravelProductiveCommand::class);
+            ->hasConfigFile();
     }
 }
