@@ -21,7 +21,7 @@ abstract class BaseResource
     public $resource;
 
     /**
-     * @param ProductiveApiClient $client
+     * @param  ProductiveApiClient  $client
      */
     public function __construct(ProductiveApiClient $client)
     {

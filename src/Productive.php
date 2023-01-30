@@ -2,8 +2,6 @@
 
 namespace LamaLama\Productive;
 
-use LamaLama\Productive\Tasks;
-use LamaLama\Productive\ProductiveApiClient;
 
 class Productive
 {

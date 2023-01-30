@@ -6,27 +6,29 @@ use LamaLama\Productive\Endpoints\TaskEndpoint;
 use LamaLama\Productive\Exceptions\ApiException;
 use LamaLama\Productive\Exceptions\HttpAdapterDoesNotSupportDebuggingException;
 use LamaLama\Productive\Exceptions\IncompatiblePlatform;
-use LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterPicker;
 
 class ProductiveApiClient
 {
     /**
      * Endpoint of the remote API.
      */
-    public const API_ENDPOINT = "https://api.productive.io/api";
+    public const API_ENDPOINT = 'https://api.productive.io/api';
 
     /**
      * Version of the remote API.
      */
-    public const API_VERSION = "v2";
+    public const API_VERSION = 'v2';
 
     /**
      * HTTP Methods
      */
-    public const HTTP_GET = "GET";
-    public const HTTP_POST = "POST";
-    public const HTTP_DELETE = "DELETE";
-    public const HTTP_PATCH = "PATCH";
+    public const HTTP_GET = 'GET';
+
+    public const HTTP_POST = 'POST';
+
+    public const HTTP_DELETE = 'DELETE';
+
+    public const HTTP_PATCH = 'PATCH';
 
     /**
      * @var \LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterInterface
@@ -58,8 +60,9 @@ class ProductiveApiClient
     public $clients;
 
     /**
-     * @param \GuzzleHttp\ClientInterface|\LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterInterface|null $httpClient
-     * @param \LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterPickerInterface|null $httpAdapterPicker
+     * @param  \GuzzleHttp\ClientInterface|\LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterInterface|null  $httpClient
+     * @param  \LamaLama\Productive\HttpAdapter\ProductiveHttpAdapterPickerInterface|null  $httpAdapterPicker
+     *
      * @throws \LamaLama\Productive\Exceptions\IncompatiblePlatform|\LamaLama\Productive\Exceptions\UnrecognizedClientException
      */
     public function __construct($httpClient = null, $httpAdapterPicker = null)
@@ -73,8 +76,7 @@ class ProductiveApiClient
     }
 
     /**
-     * @param string $url
-     *
+     * @param  string  $url
      * @return ProductiveApiClient
      */
     public function setApiEndpoint($url)
@@ -101,9 +103,9 @@ class ProductiveApiClient
     }
 
     /**
-     * @param string $authToken The Productive Auth token'
-     *
+     * @param  string  $authToken The Productive Auth token'
      * @return ProductiveApiClient
+     *
      * @throws ApiException
      */
     public function setAuthToken($authToken)
@@ -116,9 +118,9 @@ class ProductiveApiClient
     }
 
     /**
-     * @param string $accessToken OAuth access token, starting with 'access_'
-     *
+     * @param  string  $accessToken OAuth access token, starting with 'access_'
      * @return ProductiveApiClient
+     *
      * @throws ApiException
      */
     public function setAccessToken($accessToken)
@@ -146,13 +148,12 @@ class ProductiveApiClient
     }
 
     /**
-     * @param string $versionString
-     *
+     * @param  string  $versionString
      * @return ProductiveApiClient
      */
     public function addVersionString($versionString)
     {
-        $this->versionStrings[] = str_replace([" ", "\t", "\n", "\r"], '-', $versionString);
+        $this->versionStrings[] = str_replace([' ', "\t", "\n", "\r"], '-', $versionString);
 
         return $this;
     }
@@ -170,7 +171,7 @@ class ProductiveApiClient
             || ! $this->httpClient->supportsDebugging()
         ) {
             throw new HttpAdapterDoesNotSupportDebuggingException(
-                "Debugging is not supported by " . get_class($this->httpClient) . "."
+                'Debugging is not supported by '.get_class($this->httpClient).'.'
             );
         }
 
@@ -190,7 +191,7 @@ class ProductiveApiClient
             || ! $this->httpClient->supportsDebugging()
         ) {
             throw new HttpAdapterDoesNotSupportDebuggingException(
-                "Debugging is not supported by " . get_class($this->httpClient) . "."
+                'Debugging is not supported by '.get_class($this->httpClient).'.'
             );
         }
 
@@ -201,18 +202,18 @@ class ProductiveApiClient
      * Perform a http call. This method is used by the resource specific classes. Please use the $payments property to
      * perform operations on payments.
      *
-     * @param string $httpMethod
-     * @param string $apiMethod
-     * @param string|null $httpBody
-     *
+     * @param  string  $httpMethod
+     * @param  string  $apiMethod
+     * @param  string|null  $httpBody
      * @return \stdClass
+     *
      * @throws ApiException
      *
      * @codeCoverageIgnore
      */
     public function performHttpCall($httpMethod, $apiMethod, $httpBody = null)
     {
-        $url = $this->apiEndpoint . "/" . self::API_VERSION . "/" . $apiMethod;
+        $url = $this->apiEndpoint.'/'.self::API_VERSION.'/'.$apiMethod;
 
         return $this->performHttpCallToFullUrl($httpMethod, $url, $httpBody);
     }
@@ -223,11 +224,11 @@ class ProductiveApiClient
      * @see $payments
      * @see $isuers
      *
-     * @param string $httpMethod
-     * @param string $url
-     * @param string|null $httpBody
-     *
+     * @param  string  $httpMethod
+     * @param  string  $url
+     * @param  string|null  $httpBody
      * @return \stdClass|null
+     *
      * @throws ApiException
      *
      * @codeCoverageIgnore
@@ -235,19 +236,19 @@ class ProductiveApiClient
     public function performHttpCallToFullUrl($httpMethod, $url, $httpBody = null)
     {
         if (empty($this->apiKey)) {
-            throw new ApiException("You have not set an Auth token. Please use setAuthToken() to set the Auth token.");
+            throw new ApiException('You have not set an Auth token. Please use setAuthToken() to set the Auth token.');
         }
 
         $userAgent = implode(' ', $this->versionStrings);
 
         $headers = [
-            'Accept' => "application/json",
+            'Accept' => 'application/json',
             'Authorization' => "Bearer {$this->apiKey}",
             'User-Agent' => $userAgent,
         ];
 
         if ($httpBody !== null) {
-            $headers['Content-Type'] = "application/json";
+            $headers['Content-Type'] = 'application/json';
         }
 
         return $this->httpClient->send($httpMethod, $url, $headers, $httpBody);
@@ -264,11 +265,12 @@ class ProductiveApiClient
      * more API calls.
      *
      * @deprecated
+     *
      * @return string[]
      */
     public function __sleep()
     {
-        return ["apiEndpoint"];
+        return ['apiEndpoint'];
     }
 
     /**

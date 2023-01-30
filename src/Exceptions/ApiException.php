@@ -39,16 +39,17 @@ class ApiException extends \Exception
     protected $links = [];
 
     /**
-     * @param string $message
-     * @param int $code
-     * @param string|null $field
-     * @param \Psr\Http\Message\RequestInterface|null $request
-     * @param \Psr\Http\Message\ResponseInterface|null $response
-     * @param \Throwable|null $previous
+     * @param  string  $message
+     * @param  int  $code
+     * @param  string|null  $field
+     * @param  \Psr\Http\Message\RequestInterface|null  $request
+     * @param  \Psr\Http\Message\ResponseInterface|null  $response
+     * @param  \Throwable|null  $previous
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     public function __construct(
-        $message = "",
+        $message = '',
         $code = 0,
         $field = null,
         $request = null,
@@ -60,10 +61,10 @@ class ApiException extends \Exception
         $this->raisedAt = new \DateTimeImmutable();
 
         $formattedRaisedAt = $this->raisedAt->format(DateTime::ISO8601);
-        $message = "[{$formattedRaisedAt}] " . $message;
+        $message = "[{$formattedRaisedAt}] ".$message;
 
         if (! empty($field)) {
-            $this->field = (string)$field;
+            $this->field = (string) $field;
             $message .= ". Field: {$this->field}";
         }
 
@@ -96,10 +97,11 @@ class ApiException extends \Exception
     }
 
     /**
-     * @param \Psr\Http\Message\ResponseInterface $response
-     * @param \Psr\Http\Message\RequestInterface $request
-     * @param \Throwable|null $previous
+     * @param  \Psr\Http\Message\ResponseInterface  $response
+     * @param  \Psr\Http\Message\RequestInterface  $request
+     * @param  \Throwable|null  $previous
      * @return \LamaLama\Productive\Exceptions\ApiException
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     public static function createFromResponse($response, $request = null, $previous = null)
@@ -162,7 +164,7 @@ class ApiException extends \Exception
     }
 
     /**
-     * @param string $key
+     * @param  string  $key
      * @return bool
      */
     public function hasLink($key)
@@ -171,7 +173,7 @@ class ApiException extends \Exception
     }
 
     /**
-     * @param string $key
+     * @param  string  $key
      * @return mixed|null
      */
     public function getLink($key)
@@ -184,7 +186,7 @@ class ApiException extends \Exception
     }
 
     /**
-     * @param string $key
+     * @param  string  $key
      * @return null
      */
     public function getUrl($key)
@@ -215,8 +217,9 @@ class ApiException extends \Exception
     }
 
     /**
-     * @param \Psr\Http\Message\ResponseInterface $response
+     * @param  \Psr\Http\Message\ResponseInterface  $response
      * @return \stdClass
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     protected static function parseResponseBody($response)

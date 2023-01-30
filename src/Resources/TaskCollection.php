@@ -9,7 +9,7 @@ class TaskCollection extends CursorCollection
      */
     public function getCollectionResourceName()
     {
-        return "tasks";
+        return 'tasks';
     }
 
     /**

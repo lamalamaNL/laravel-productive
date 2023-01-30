@@ -12,9 +12,9 @@ abstract class CursorCollection extends BaseCollection
     protected $client;
 
     /**
-     * @param ProductiveApiClient $client
-     * @param int $count
-     * @param \stdClass|null $_links
+     * @param  ProductiveApiClient  $client
+     * @param  int  $count
+     * @param  \stdClass|null  $_links
      */
     final public function __construct(ProductiveApiClient $client, $count, $_links)
     {
@@ -32,6 +32,7 @@ abstract class CursorCollection extends BaseCollection
      * Return the next set of resources when available
      *
      * @return CursorCollection|null
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     final public function next()
@@ -55,6 +56,7 @@ abstract class CursorCollection extends BaseCollection
      * Return the previous set of resources when available
      *
      * @return CursorCollection|null
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     final public function previous()

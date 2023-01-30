@@ -2,9 +2,6 @@
 
 namespace LamaLama\Productive\Resources;
 
-use LamaLama\Productive\Exceptions\ApiException;
-use LamaLama\Productive\ProductiveApiClient;
-
 class Task extends BaseResource
 {
     /**
@@ -35,13 +32,14 @@ class Task extends BaseResource
 
     /**
      * @return \LamaLama\Productive\Resources\Task
+     *
      * @throws \LamaLama\Productive\Exceptions\ApiException
      */
     public function update()
     {
         $body = [
-            "title" => $this->title,
-            "description" => $this->description,
+            'title' => $this->title,
+            'description' => $this->description,
         ];
 
         $result = $this->client->tasks->update($this->id, $body);

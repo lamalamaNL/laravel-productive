@@ -8,7 +8,7 @@ use LamaLama\Productive\Resources\TaskCollection;
 
 class TasksEndpoint
 {
-    protected $resourcePath = "tasks";
+    protected $resourcePath = 'tasks';
 
     /**
      * @return Task
@@ -21,9 +21,8 @@ class TasksEndpoint
     /**
      * Get the collection object that is used by this API endpoint. Every API endpoint uses one type of collection object.
      *
-     * @param int $count
-     * @param \stdClass $_links
-     *
+     * @param  int  $count
+     * @param  \stdClass  $_links
      * @return TaskCollection
      */
     protected function getResourceCollectionObject($count, $_links)
@@ -34,10 +33,10 @@ class TasksEndpoint
     /**
      * Creates a task in Productive.
      *
-     * @param array $data An array containing details on the payment.
-     * @param array $filters
-     *
+     * @param  array  $data An array containing details on the payment.
+     * @param  array  $filters
      * @return Task
+     *
      * @throws ApiException
      */
     public function create(array $data = [], array $filters = [])
@@ -50,10 +49,10 @@ class TasksEndpoint
      *
      * Will throw a ApiException if the payment id is invalid or the resource cannot be found.
      *
-     * @param string $paymentId
-     *
-     * @param array $data
+     * @param  string  $paymentId
+     * @param  array  $data
      * @return Payment
+     *
      * @throws ApiException
      */
     public function update($paymentId, array $data = [])
@@ -70,9 +69,10 @@ class TasksEndpoint
      *
      * Will throw a ApiException if the payment id is invalid or the resource cannot be found.
      *
-     * @param string $paymentId
-     * @param array $parameters
+     * @param  string  $paymentId
+     * @param  array  $parameters
      * @return Payment
+     *
      * @throws ApiException
      */
     public function get($paymentId, array $parameters = [])
@@ -90,10 +90,10 @@ class TasksEndpoint
      * Will throw a ApiException if the payment id is invalid or the resource cannot be found.
      * Returns with HTTP status No Content (204) if successful.
      *
-     * @param string $paymentId
-     *
-     * @param array $data
+     * @param  string  $paymentId
+     * @param  array  $data
      * @return Payment
+     *
      * @throws ApiException
      */
     public function delete($paymentId, array $data = [])
@@ -107,10 +107,10 @@ class TasksEndpoint
      * Will throw a ApiException if the payment id is invalid or the resource cannot be found.
      * Returns with HTTP status No Content (204) if successful.
      *
-     * @param string $paymentId
-     *
-     * @param array $data
+     * @param  string  $paymentId
+     * @param  array  $data
      * @return Payment
+     *
      * @throws ApiException
      */
     public function cancel($paymentId, array $data = [])
@@ -121,11 +121,11 @@ class TasksEndpoint
     /**
      * Retrieves a collection of Payments from Productive.
      *
-     * @param string $from The first payment ID you want to include in your list.
-     * @param int $limit
-     * @param array $parameters
-     *
+     * @param  string  $from The first payment ID you want to include in your list.
+     * @param  int  $limit
+     * @param  array  $parameters
      * @return PaymentCollection
+     *
      * @throws ApiException
      */
     public function page($from = null, $limit = null, array $parameters = [])
