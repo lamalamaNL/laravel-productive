@@ -25,7 +25,6 @@ This is the contents of the published config file:
 
 ```php
 return [
-    'api_url' => env('PRODUCTIVE_API_URL', 'https://api.productive.io/api/v2'),
     'auth_token' => env('PRODUCTIVE_AUTH_TOKEN'),
     'organization_id' => env('PRODUCTIVE_ORGANIZATION_ID'),
 ];
