@@ -1,9 +1,9 @@
 # Productive for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/lamalamanl/laravel-productive.svg?style=flat-square)](https://packagist.org/packages/lamalamanl/laravel-productive)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/lamalamanl/laravel-productive/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/lamalamanl/laravel-productive/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/lamalamanl/laravel-productive/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/lamalamanl/laravel-productive/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/lamalamanl/laravel-productive.svg?style=flat-square)](https://packagist.org/packages/lamalamanl/laravel-productive)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lamalama/laravel-productive.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-productive)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/lamalama/laravel-productive/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/lamalamanl/laravel-productive/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/lamalama/laravel-productive/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/lamalama/laravel-productive/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/lamalama/laravel-productive.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-productive)
 
 Laravel-Productive incorporates the Productive API into your Laravel project.
 
